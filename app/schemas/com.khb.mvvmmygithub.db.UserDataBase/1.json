@@ -1,0 +1,534 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "13b54a5d465e43a3ce10e95d6ca2153d",
+    "entities": [
+      {
+        "tableName": "received_event",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`indexInResponse` INTEGER NOT NULL, `actor` TEXT NOT NULL, `created_at` TEXT NOT NULL, `id` TEXT NOT NULL, `payload` TEXT NOT NULL, `is_public` INTEGER NOT NULL, `repo` TEXT NOT NULL, `type` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "indexInResponse",
+            "columnName": "indexInResponse",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "actor",
+            "columnName": "actor",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "created_at",
+            "columnName": "created_at",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "payload",
+            "columnName": "payload",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isPublic",
+            "columnName": "is_public",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "repo",
+            "columnName": "repo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "user_repos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`indexInSortResponse` INTEGER NOT NULL, `archive_url` TEXT NOT NULL, `archived` INTEGER NOT NULL, `assignees_url` TEXT NOT NULL, `blobs_url` TEXT NOT NULL, `branches_url` TEXT NOT NULL, `clone_url` TEXT NOT NULL, `collaborators_url` TEXT NOT NULL, `comments_url` TEXT NOT NULL, `commits_url` TEXT NOT NULL, `compare_url` TEXT NOT NULL, `contents_url` TEXT NOT NULL, `contributors_url` TEXT NOT NULL, `created_at` TEXT NOT NULL, `default_branch` TEXT NOT NULL, `deployments_url` TEXT NOT NULL, `description` TEXT NOT NULL, `disabled` INTEGER NOT NULL, `downloads_url` TEXT NOT NULL, `events_url` TEXT NOT NULL, `fork` INTEGER NOT NULL, `forks` INTEGER NOT NULL, `forks_count` INTEGER NOT NULL, `forks_url` TEXT NOT NULL, `full_name` TEXT NOT NULL, `git_commits_url` TEXT NOT NULL, `git_refs_url` TEXT NOT NULL, `git_tags_url` TEXT NOT NULL, `git_url` TEXT NOT NULL, `has_downloads` INTEGER NOT NULL, `has_issues` INTEGER NOT NULL, `has_pages` INTEGER NOT NULL, `has_projects` INTEGER NOT NULL, `has_wiki` INTEGER NOT NULL, `homepage` TEXT NOT NULL, `hooks_url` TEXT NOT NULL, `html_url` TEXT NOT NULL, `id` INTEGER NOT NULL, `issue_comment_url` TEXT NOT NULL, `issue_events_url` TEXT NOT NULL, `issues_url` TEXT NOT NULL, `keys_url` TEXT NOT NULL, `labels_url` TEXT NOT NULL, `language` TEXT NOT NULL, `languages_url` TEXT NOT NULL, `license` TEXT NOT NULL, `merges_url` TEXT NOT NULL, `milestones_url` TEXT NOT NULL, `mirror_url` TEXT, `name` TEXT NOT NULL, `node_id` TEXT NOT NULL, `notifications_url` TEXT NOT NULL, `open_issues` INTEGER NOT NULL, `open_issues_count` INTEGER NOT NULL, `owner` TEXT NOT NULL, `isPrivate` INTEGER NOT NULL, `pulls_url` TEXT NOT NULL, `pushed_at` TEXT NOT NULL, `releases_url` TEXT NOT NULL, `size` INTEGER NOT NULL, `ssh_url` TEXT NOT NULL, `stargazers_count` INTEGER NOT NULL, `stargazers_url` TEXT NOT NULL, `statuses_url` TEXT NOT NULL, `subscribers_url` TEXT NOT NULL, `subscription_url` TEXT NOT NULL, `svn_url` TEXT NOT NULL, `tags_url` TEXT NOT NULL, `teams_url` TEXT NOT NULL, `trees_url` TEXT NOT NULL, `updated_at` TEXT NOT NULL, `url` TEXT NOT NULL, `watchers` INTEGER NOT NULL, `watchers_count` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "indexInSortResponse",
+            "columnName": "indexInSortResponse",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "archive_url",
+            "columnName": "archive_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "archived",
+            "columnName": "archived",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "assignees_url",
+            "columnName": "assignees_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "blobs_url",
+            "columnName": "blobs_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "branches_url",
+            "columnName": "branches_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "clone_url",
+            "columnName": "clone_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "collaborators_url",
+            "columnName": "collaborators_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "comments_url",
+            "columnName": "comments_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "commits_url",
+            "columnName": "commits_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "compare_url",
+            "columnName": "compare_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contents_url",
+            "columnName": "contents_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contributors_url",
+            "columnName": "contributors_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "created_at",
+            "columnName": "created_at",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "default_branch",
+            "columnName": "default_branch",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deployments_url",
+            "columnName": "deployments_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "disabled",
+            "columnName": "disabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "downloads_url",
+            "columnName": "downloads_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "events_url",
+            "columnName": "events_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fork",
+            "columnName": "fork",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "forks",
+            "columnName": "forks",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "forks_count",
+            "columnName": "forks_count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "forks_url",
+            "columnName": "forks_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "full_name",
+            "columnName": "full_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "git_commits_url",
+            "columnName": "git_commits_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "git_refs_url",
+            "columnName": "git_refs_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "git_tags_url",
+            "columnName": "git_tags_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "git_url",
+            "columnName": "git_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "has_downloads",
+            "columnName": "has_downloads",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "has_issues",
+            "columnName": "has_issues",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "has_pages",
+            "columnName": "has_pages",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "has_projects",
+            "columnName": "has_projects",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "has_wiki",
+            "columnName": "has_wiki",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "homepage",
+            "columnName": "homepage",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hooks_url",
+            "columnName": "hooks_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "html_url",
+            "columnName": "html_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "issue_comment_url",
+            "columnName": "issue_comment_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "issue_events_url",
+            "columnName": "issue_events_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "issues_url",
+            "columnName": "issues_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "keys_url",
+            "columnName": "keys_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "labels_url",
+            "columnName": "labels_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "language",
+            "columnName": "language",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "languages_url",
+            "columnName": "languages_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "license",
+            "columnName": "license",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "merges_url",
+            "columnName": "merges_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "milestones_url",
+            "columnName": "milestones_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mirror_url",
+            "columnName": "mirror_url",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "node_id",
+            "columnName": "node_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notifications_url",
+            "columnName": "notifications_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "open_issues",
+            "columnName": "open_issues",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "open_issues_count",
+            "columnName": "open_issues_count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "owner",
+            "columnName": "owner",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isPrivate",
+            "columnName": "isPrivate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pulls_url",
+            "columnName": "pulls_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pushed_at",
+            "columnName": "pushed_at",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "releases_url",
+            "columnName": "releases_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "size",
+            "columnName": "size",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ssh_url",
+            "columnName": "ssh_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stargazers_count",
+            "columnName": "stargazers_count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stargazers_url",
+            "columnName": "stargazers_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "statuses_url",
+            "columnName": "statuses_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subscribers_url",
+            "columnName": "subscribers_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subscription_url",
+            "columnName": "subscription_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "svn_url",
+            "columnName": "svn_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tags_url",
+            "columnName": "tags_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "teams_url",
+            "columnName": "teams_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "trees_url",
+            "columnName": "trees_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updated_at",
+            "columnName": "updated_at",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "url",
+            "columnName": "url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "watchers",
+            "columnName": "watchers",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "watchers_count",
+            "columnName": "watchers_count",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '13b54a5d465e43a3ce10e95d6ca2153d')"
+    ]
+  }
+}

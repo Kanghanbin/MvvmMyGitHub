@@ -1,0 +1,84 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion android_version.compileSdkVersion
+
+
+    defaultConfig {
+        minSdkVersion android_version.minSdkVersion
+        targetSdkVersion android_version.targetSdkVersion
+        versionCode android_version.versionCode
+        versionName android_version.versionName
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api libs.kotlin_stdlib_jdk7
+    api libs.autodispose
+    api libs.autodispose_android_archcomponents
+
+
+    // kodein
+    api libs.kodein
+    api libs.kodein_android
+    api libs.kodein_androidx
+
+
+    // retrofit
+    api libs.retrofit
+    api libs.retrofit_gson
+    api libs.retrofit_rxjava
+
+    // rx
+    api libs.rxkotlin
+    api libs.rxandroid
+
+    //rxbinding
+    api libs.rxbinding
+    api libs.rxbinding_appcompat
+    api libs.rxbinding_recyclerview
+    api libs.rxbinding_swiperefresh
+
+    //glide
+    api libs.glide
+    kapt libs.glide_compiler
+
+    // okhttp
+    api libs.okhttp
+    api libs.okhttp_logging
+
+    api libs.jetpack_lifecycle_extensions
+    api libs.jetpack_lifecycle_java8
+    api libs.jetpack_livedata_rx
+
+
+    api libs.jetpack_room
+    api libs.jetpack_room_ktx
+    api libs.jetpack_room_rxjava
+    api libs.jetpack_room_test
+
+
+    api libs.jetpack_navigation_fragment
+    api libs.jetpack_navigation_ui
+
+    api libs.jetpack_paging_runtime
+    api libs.jetpack_paging_java2
+
+    implementation libs.appcompat
+    testImplementation libs.junit
+    androidTestImplementation libs.espresso_core
+}
